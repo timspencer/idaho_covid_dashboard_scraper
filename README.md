@@ -9,6 +9,9 @@ another system.  These scripts do that for you.
 
 # Install
 
+You will need to have python3 installed on your system.
+https://wiki.python.org/moin/BeginnersGuide/Download
+
 `pip3 install -r requirements.txt` will install all of the python dependencies.
 
 # Usage
