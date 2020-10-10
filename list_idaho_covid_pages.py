@@ -9,17 +9,17 @@ url = "https://public.tableau.com/views/DPHIdahoCOVID-19Dashboard/Home"
 
 r = requests.get(
     url,
-    params= {
-        ":showVizHome":"no",
+    params={
+        ":showVizHome": "no",
     }
 )
 soup = BeautifulSoup(r.text, "html.parser")
 
-tableauData = json.loads(soup.find("textarea",{"id": "tsConfigContainer"}).text)
+tableauData = json.loads(soup.find("textarea", {"id": "tsConfigContainer"}).text)
 
 dataUrl = f'https://public.tableau.com{tableauData["vizql_root"]}/bootstrapSession/sessions/{tableauData["sessionid"]}'
 
-r = requests.post(dataUrl, data= {
+r = requests.post(dataUrl, data={
     "sheet_id": tableauData["sheetId"],
 })
 
@@ -30,8 +30,7 @@ sheetsinfo = info['worldUpdate']['applicationPresModel']['workbookPresModel']['s
 
 print("sheet,subsheet")
 for sheet in sheetsinfo:
-	if not sheet['isPublished']:
-		continue
-	for subsheet in sheet['namesOfSubsheets']:
-		print("%s,%s" % (sheet['sheet'], subsheet))
-
+    if not sheet['isPublished']:
+        continue
+    for subsheet in sheet['namesOfSubsheets']:
+        print("%s,%s" % (sheet['sheet'], subsheet))
