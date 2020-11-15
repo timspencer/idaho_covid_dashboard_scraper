@@ -3,7 +3,8 @@
 # This script reformats a csv file according to requirements from Jen:
 #   I have attached a csv with the headers and an example of the data formatting. I want to convert all of the dates to the format "yyyy-mm-dd" and convert the "Health District x" to just "x"
 #
-# usage:  ./jen_csv_reformatter.py <inputfilename.csv> <outputfilename.csv>
+# usage:    ./jen_csv_reformatter.py <inputfilename.csv> <outputfilename.csv>
+# example:  ./jen_csv_reformatter.py lineliststructure.csv output.csv
 #
 
 import csv
